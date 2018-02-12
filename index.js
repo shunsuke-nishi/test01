@@ -1,18 +1,18 @@
 'use strict';
 // key: タスクの文字列 value: 完了しているかどうかの真偽値
-const tasks = new Map();
+let tasks = new Map();
 const fs = require('fs');
 const fileName = './tasks.json';
 
 /**
- * タスクをファイルに保存する
- */
-function saveTasks(){
-    fs.writeFileSync(fileName, JSON.stringfy(Array.from(tasks)), 'utf8');
+* タスクをファイルに保存する
+*/
+function saveTasks() {
+    fs.writeFileSync(fileName, JSON.stringify(Array.from(tasks)), 'utf8');
 }
 
 /**
-* TODO を追加する
+* TODOを追加する
 * @param {string} task
 */
 function todo(task) {
